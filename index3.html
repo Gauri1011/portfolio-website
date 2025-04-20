@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome | My Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #a6c0fe, #f68084);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      color: #333;
+    }
+
+    .intro-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      margin-right: 20px;
+      margin-bottom: 15px;
+    }
+
+    .intro-text {
+      max-width: 500px;
+      color: #fff;
+      text-shadow: 1px 1px #00000044;
+    }
+
+    .intro-text h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .intro-text p {
+      font-size: 1em;
+      line-height: 1.5;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      color: #fff;
+      font-size: 3em;
+      text-shadow: 2px 2px #00000033;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #ffffffdd;
+      border-radius: 16px;
+      padding: 20px;
+      width: 280px;
+      height: 320px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .about-content, .skills {
+      margin-bottom: 10px;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skills li::before {
+      content: "✓ ";
+      color: green;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .resume-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .link-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .link-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    .link-card-content {
+      z-index: 2;
+      position: relative;
+      margin-top: auto;
+    }
+
+    .link-card a {
+      background-color: #ffffffaa;
+      color: #000;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .link-card a:hover {
+      background-color: #fff;
+    }
+
+    .contact-section {
+      margin-top: 60px;
+      text-align: center;
+      background: #ffffffdd;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .contact-section h2 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 15px;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.2em;
+      transition: color 0.3s;
+    }
+
+    .contact-links a:hover {
+      color: #007bff;
+    }
+
+    .contact-links i {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .intro-section {
+        flex-direction: column;
+      }
+
+      .profile-pic {
+        margin-right: 0;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Profile Picture & Intro -->
+  <div class="intro-section">
+    <img src="myprofile.jpg" alt="My Profile Picture" class="profile-pic">
+    <div class="intro-text">
+      <h2>Hello! I'm Gauri</h2>
+      <p>I am a BCA student passionate about web development. This website project is built using HTML and CSS, showcasing my skills in creating responsive and user-friendly web pages with clean design and structure.</p>
+    </div>
+  </div>
+
+  <!-- Main Heading -->
+  <h1>Welcome to My World 🌟</h1>
+
+  <!-- Card Section -->
+  <div class="container">
+
+    <!-- About Me Card -->
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>Hi! I'm a web developer passionate about creating clean, responsive websites.</p>
+      </div>
+      <div class="skills">
+        <h3>Skills:</h3>
+        <ul>
+          <li>HTML,CSS</li>
+          <li>Microsoft Office Suite</li>
+          <li>Basic of Data Structure using C,C++,SQL,Core Java</li>
+          <li>Tally</li>
+        </ul>
+      </div>
+      <a href="GauriZagade.pdf" download class="resume-btn">Download Resume</a>
+    </div>
+
+    <!-- Global Time Card -->
+    <div class="card link-card">
+      <div class="link-card-content">
+        <h2>🌍 Global Time</h2>
+        <p>Display Multiple Time Zones.</p>
+        <a href="time-abroad.html">Visit Page</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contact Me Section -->
+  <div class="contact-section">
+    <h2>Contact Me</h2>
+    <p>I'd love to connect with you!</p>
+    <div class="contact-links">
+      <a href="mailto:gaurizagade@gmail.com"><i class="fas fa-envelope"></i> Gmail</a>
+      <a href="https://www.linkedin.com/in/Gauri Zagade" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </div>
+
+</body>
+</html>
